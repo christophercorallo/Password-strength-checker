@@ -1,0 +1,33 @@
+body {
+    width:610px;
+}
+
+#frmCheckPassword {
+        border:#000000 2px solid;background:#ff000000;padding:10px;
+}
+
+h1 {
+    font-size: 21px;
+}
+
+.inputBox {
+    padding:7px; border:#000000 1px solid; border-radius:4px;
+}
+#password-status {
+    padding: 5px 10px;color: #000000; border-radius:4px;margin-top:5px;
+}
+.medium-password {
+    background-color: hsl(57, 100%, 67%);border:#000000 1px solid;
+}
+.weak-password  {
+    background-color: #ff0000;border:#000000 1px solid;
+}
+.strong-password {
+    background-color: #44ff4d;border:#000000 1px solid;
+}
+
+.shrek {
+    width: 300px;
+    margin-top: 20px;
+    align-self: auto;
+}

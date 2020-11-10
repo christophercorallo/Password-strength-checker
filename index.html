@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <script>
+    //Define function that checks password strength
+    function checkPasswordStrength() {
+        //Define variables for characters possibly used in passwordd
+        var number = /([0-9])/;
+        var letters = /([a-zA-Z])/;
+        var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+        
+        //Evaluate if the password is under 6 characters
+        if($('#password').val().length<6) {
+            //Change class for visuals and display message
+            $('#password-status').removeClass();
+            $('#password-status').addClass('weak-password');
+            $('#password-status').html("Your password is weak! Try making it longer");
+        } else {  	
+            //Evaluate if the password has a number, letter and symbol
+            if($('#password').val().match(number) && $('#password').val().match(letters) && $('#password').val().match(special_characters)) {            
+                $('#password-status').removeClass();
+                $('#password-status').addClass('strong-password');
+                $('#password-status').html("Your password is strong!");
+            } else {
+                $('#password-status').removeClass();
+                $('#password-status').addClass('medium-password');
+                $('#password-status').html("Your password is okay. Try adding numbers and symbols to make it stronger!");
+            } 
+        }
+    }
+    </script>
+    <h1>WELCOME TO SHREK'S PASSWORD STRENGTH CHECKER</h1>
+    <div id="frmCheckPassword">
+    <label>Password:</label>
+    <input type="password" id="password" class="inputBox" onKeyUp="checkPasswordStrength();" /><div id="password-status"></div>
+    </div>
+    <img src="shrek.jpg" alt="shrek" class="shrek" id="shrek">
+    
+</body>
+</html>
